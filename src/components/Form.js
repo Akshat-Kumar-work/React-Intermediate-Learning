@@ -19,34 +19,44 @@ const[formData , setformData] = useState(
     {
        firstName:"",
        lastName:"",
-       email: ""
+       email:"",
+       Comments:""
    }
                      );
+
 
 
 
 function changeHandler (event){
 //isme previous state jo hai form data jisek andar object hai usko 
 // copy kar rhe hai aur jis element m trigger hua hai event uski value ko bhi update kr rhe hai using spread operator
-setformData((prevFormData) =>{ return( { ...prevFormData , [event.target.name]:event.target.value}  ) } );
+setformData((prevFormData) =>{ return {...prevFormData,[event.target.name]:event.target.value}   } );
+    
 }
-
+console.log(formData)
 
     return(
         <div>
 <form>
-     <input type="text" placeholder='first name' onChange={changeHandler} name="firstname" />
+     <input type="text" placeholder='first name' onChange={changeHandler} name="firstName" value={formData.firstName} />
 
      <br></br>
      <br></br>
 
-     <input type="text" placeholder='second name' onChange={changeHandler} name="lastname"/>
+     <input type="text" placeholder='second name' onChange={changeHandler} name="lastName" value={formData.lastName}/>
+     
+
+     <br></br>
+     <br></br>
+
+     <input type="email" placeholder='Enter your email here' onChange={changeHandler} name="email" value={formData.email}/> 
+
+     <br></br>
+     <br></br>
+
+     <textarea placeholder='enter your comments here' onChange={changeHandler} name="Comments" value={formData.Comments}
+     ></textarea>
      </form>
-
-     <br></br>
-     <br></br>
-
-     <input type="email" placeholder='Enter your email here' onChange={changeHandler} name="email"/> 
         </div>
     )
 }
