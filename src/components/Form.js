@@ -30,7 +30,7 @@ const[formData , setformData] = useState(
 function changeHandler (event){
 //isme previous state jo hai form data jisek andar object hai usko 
 // copy kar rhe hai aur jis element m trigger hua hai event uski value ko bhi update kr rhe hai using spread operator
-setformData((prevFormData) =>{ return {...prevFormData,[event.target.name]:event.target.value}   } );
+setformData((prevFormData) =>{ return ({...prevFormData,[event.target.name]:event.target.value})   } );
     
 }
 console.log(formData)
