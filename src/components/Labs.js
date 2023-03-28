@@ -1,6 +1,7 @@
 function Labs(){
-    <div>
+    return(<div>
         labs
-    </div>
+    </div> )
+    
 }
 export default Labs;

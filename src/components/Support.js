@@ -1,7 +1,8 @@
 function Support(){
 
-    <div>
-        support 
-    </div>
+    return(<div>
+        support page
+    </div>)
+    
 }
 export default Support;
