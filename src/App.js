@@ -3,6 +3,7 @@ import { NavLink, Link, Route, Routes } from 'react-router-dom';
 import About from './components/About';
 import Home from './components/Home';
 import Labs from './components/Labs';
+import MainHeader from './components/MainHeader';
 import NotFound from './components/NotFound';
 import Support from './components/Support';
 
@@ -38,12 +39,15 @@ function App() {
     <Routes>
 
       {/* single path create krne k li route ka use krty hai */}
-       <Route path="/" element={ <Home/> }/> 
+      {/* here main header is parent router */}
+       <Route path="/" element={ <MainHeader/> }> 
+       <Route index element={ <Home></Home>}/> 
        <Route path="/support" element={ <Support></Support> }/> 
        <Route path='/about' element={ <About></About> }/> 
        <Route path='/labs' element={  <Labs></Labs> }/> 
        <Route path='*' element={  <NotFound></NotFound>  }/> 
-
+        </Route>
+        
     </Routes>
     </div>
   );
